@@ -10,6 +10,7 @@ div {
   padding: 10px 25px;
 }
 
+
 .border {border: 25px solid white;}
 .nav {font-size: 30px; padding: 0px 50px}
 .navlist {padding: 0px 10px; padding-left: 100px; margin: 0px 50px}
@@ -18,7 +19,7 @@ div {
 }
 
 .navbar-nav > li{
-  margin-left:100x;
+  margin-left:100px;
   margin-right:100px;
 }
 
@@ -78,6 +79,7 @@ img {vertical-align: middle;}
   display: inline-block;
   transition: background-color 0.3s ease;
 }
+
 
 
 /* Fading animation */
