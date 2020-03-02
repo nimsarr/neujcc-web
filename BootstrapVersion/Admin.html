@@ -9,6 +9,43 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
     <title>Suck a dick, lol</title>
     <link rel="stylesheet" type="text/css" href="style.css">
+
+    <script>
+
+        function checkPass() {
+            var passEntered = "";
+            passEntered = document.getElementById("myInput").value;
+            var encriptedPass = "-1184795834";
+            var encoded = hashCode(passEntered);
+            if (encoded == encriptedPass) {
+                document.getElementById("table").src = "https://docs.google.com/spreadsheets/d/e/2PACX-1vT3HQuLjQBIAH9GB8Dpt5JxF4c9OkpqXZZ3_PlIADpBhOREBGT2c1pm6df6jAem1k3Ru54PJDtuJ7ie/pubhtml?widget=true&amp;headers=false";
+                document.getElementById("link").href = "https://docs.google.com/forms/d/1CzAADMCw7sfxdPRZU9x3R5AXWW2Pf4VdWygE3f5dhTQ/edit#responses";
+                
+                document.getElementById("askPass").style.display = "none";
+            } else {
+                alert("You ain't admin!");
+                document.getElementById("errorMessage").innerHTML = encoded;
+            }
+        }
+
+
+        function hashCode(s) {
+            for (var i = 0, h = 0; i < s.length; i++)
+                h = Math.imul(31, h) + s.charCodeAt(i) | 0;
+            return h;
+        }
+
+        function myFunct() {
+            var x = document.getElementById("myInput");
+            if (x.type === "password") {
+                x.type = "text";
+            } else {
+                x.type = "password";
+            }
+        }
+
+    </script>
+
 </head>
 
 <body>
@@ -28,18 +65,35 @@
                     <a class="nav-item nav-link navlist" href="index.html">Home </a>
                     <a class="nav-item nav-link navlist" href="AboutUS.html">About Us</a>
                     <a class="nav-item nav-link navlist" href="calendar.html">Calendar</a>
-                    <a class="nav-item nav-link navlist active" href="Dinner.html">Dinner<span class="sr-only">(current)</span></a>
+                    <a class="nav-item nav-link navlist" href="Dinner.html">Dinner<span class="sr-only">(current)</span></a>
                     <a class="nav-item nav-link navlist" href="Mail.html">Sign Up</a>
-                    <a class="nav-item nav-link disabled navlist" href="#" tabindex="-1" aria-disabled="true">Disabled</a>
+                    <a class="nav-item nav-link navlist active" href="Admin.html">Admin</a>
+<!--                    <a class="nav-item nav-link disabled navlist" href="#" tabindex="-1" aria-disabled="true">Disabled</a>-->
                 </div>
             </div>
         </nav>
 
     </div>
 
+    <center>
+        <form id="askPass">
+            <label for="AdminPassword">Enter Admin Password</label>
+            <input type="password" value="" id="myInput">
+
+            <input type="checkbox" onclick="myFunct()">Show Password
+            <span id="errorMessage"></span>
+            <button type="button" onclick="checkPass()">Enter</button>
+        </form>
+    </center>
+
+
 
     <center>
-        <iframe src="https://docs.google.com/spreadsheets/d/e/2PACX-1vT3HQuLjQBIAH9GB8Dpt5JxF4c9OkpqXZZ3_PlIADpBhOREBGT2c1pm6df6jAem1k3Ru54PJDtuJ7ie/pubhtml?widget=true&amp;headers=false" width="85%" height="855"></iframe>
+        <div id="data">
+            <iframe id="table" src="" width="85%" height="855"></iframe>
+            <br>
+            <a id="link" href="">Responses</a>
+        </div>
     </center>
 
     <!-- Optional JavaScript -->
