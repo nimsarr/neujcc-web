@@ -1,2 +1,4 @@
 # neujcc-web
-A website for the Northeastern University Japanese Culture Club.
+A defunct website for the Northeastern University Japanese Culture Club.
+
+New website at neujcc.com!
